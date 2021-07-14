@@ -20,14 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-d&o6!#8a!@w$%sk59_9jydomda5ndh$jk2u%o4i*__zylckdqy"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    "server.eba-3vcize8p.us-west-2.elasticbeanstalk.com"
-]
+ALLOWED_HOSTS = ["server.eba-3vcize8p.us-west-2.elasticbeanstalk.com"]
 
 
 # Application definition
