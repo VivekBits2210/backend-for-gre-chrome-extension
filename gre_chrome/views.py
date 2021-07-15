@@ -13,5 +13,7 @@ def index(request):
 
 def fetch_word(request):
     difficulty = request.GET.get("difficulty")
+    if difficulty is None:
+        difficulty = "1"
     datapoint = random.choice(words[difficulty])
     return JsonResponse(datapoint)
