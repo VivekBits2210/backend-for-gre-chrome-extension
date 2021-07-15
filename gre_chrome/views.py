@@ -2,7 +2,7 @@ from django.http import JsonResponse
 import pickle
 import random
 
-words = pickle.load(open("./gre_chrome/all_words_with_freq_and_meaning.pkl", "rb"))
+words = pickle.load(open("./gre_chrome/difficulty_to_words_map.pkl", "rb"))
 
 
 def index(request):
@@ -12,6 +12,6 @@ def index(request):
 
 
 def fetch_word(request):
-    datapoint = random.choice(words)
-    datapoint["word"] = datapoint["word"].capitalize()
+    difficulty = request.GET.get("difficulty")
+    datapoint = random.choice(words[difficulty])
     return JsonResponse(datapoint)
